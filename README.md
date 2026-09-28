@@ -1,177 +1,87 @@
-# Hospital Patient Analytics — SQL & Power BI
+# Hospital Operations & Patient Insights Dashboard
 
 ## Project Overview
 
-This portfolio project analyzes **5,000 hospital patient records** using **SQL and Microsoft Power BI**.
+This project analyzes 5,000 hospital patient records to uncover insights into patient demographics, hospital admissions, treatment costs, length of stay, departmental activity, insurance coverage, and patient satisfaction.
 
-The goal was to explore patient demographics, admission patterns, hospital operations, treatment costs, insurance coverage, doctor workload, diagnoses, length of stay, and patient satisfaction, then communicate the findings through an interactive four-page Power BI dashboard.
-
-> **Dataset note:** This is a portfolio analysis of the provided hospital patient dataset. It should not be presented as verified performance data from a real hospital.
-
-## Tools & Technologies
-
-- **SQL Server** — data exploration, aggregation, validation, and analytical queries
-- **Power BI** — interactive dashboard and business intelligence
-- **DAX** — calculated measures and dashboard metrics
-- **Data Visualization** — charts, KPIs, tables, and interactive filters
-
-## Dataset
-
-The dataset contains 5,000 patient records and 14 fields:
-
-| Field | Description |
-|---|---|
-| Patient_ID | Unique patient identifier |
-| Age | Patient age |
-| Gender | Patient gender |
-| Location | Patient location |
-| Admission_Date | Date of admission |
-| Discharge_Date | Date of discharge |
-| Admission_Type | Emergency, Scheduled, or Referral |
-| Department | Hospital department |
-| Diagnosis | Patient diagnosis |
-| Doctor | Attending doctor |
-| Insurance_Type | Insurance/payment category |
-| Treatment_Cost_NGN | Treatment cost in Nigerian Naira |
-| Length_of_Stay_Days | Length of hospital stay |
-| Patient_Satisfaction | Satisfaction score |
+The project combines SQL analysis with an interactive Power BI dashboard to transform raw patient data into meaningful business and operational insights.
 
 ## Business Questions
 
-The analysis addressed questions such as:
+- How many patients were admitted?
+- Which departments handled the highest patient volumes?
+- What were the most common diagnoses?
+- How did treatment costs vary across departments and diagnoses?
+- What was the average length of stay?
+- Which admission type was most common?
+- How was the patient population distributed by age and gender?
+- How did patient satisfaction vary across locations?
+- How did treatment costs vary by insurance type?
+- What relationship existed between treatment cost and length of stay?
 
-1. How many patients were admitted?
-2. How does patient volume change over time?
-3. Which departments handle the highest patient volumes?
-4. Which diagnoses are most common?
-5. Which departments have the highest treatment costs?
-6. How does average treatment cost vary by diagnosis?
-7. What is the average length of stay?
-8. Which admission type is most common?
-9. Which insurance type is used most frequently?
-10. Which doctors have the highest patient workload?
-11. How does patient satisfaction vary by department and location?
-12. Which patients have treatment costs above the overall average?
+## Key Performance Indicators
 
-## Key KPIs
-
-Based on the full dataset:
-
-- **Total Patients:** 5,000
-- **Total Treatment Cost:** approximately ₦1.217B
-- **Average Treatment Cost:** approximately ₦243K
-- **Average Length of Stay:** 10.36 days
-- **Average Patient Satisfaction:** 3.88 / 5
-- **Emergency Admissions:** 44.0%
+| KPI | Result |
+|---|---:|
+| Total Patients | 5,000 |
+| Total Treatment Cost | ₦1.2B |
+| Average Treatment Cost | ₦243K |
+| Average Length of Stay | 10.36 days |
+| Average Patient Satisfaction | 3.9 / 5 |
 
 ## Key Insights
 
-- Emergency admissions account for approximately **44%** of all admissions.
-- The **65+** age group is the largest age segment in the dataset.
-- **General Medicine** has the highest patient volume, followed by Emergency.
-- Treatment cost has a strong positive relationship with length of stay in this dataset.
-- Average treatment cost is approximately **₦243K** per patient.
-- Patient satisfaction is relatively close across locations, with the displayed location averages ranging from about **3.81 to 3.93**.
-- Treatment cost and patient satisfaction show little linear relationship in the dataset.
+- Emergency admissions represented approximately 44% of all admissions.
+- Patients aged 70+ represented the largest age group in the dataset.
+- General Medicine recorded the highest patient volume.
+- Treatment cost showed a strong positive relationship with length of stay.
+- Malaria recorded one of the highest total treatment costs among the diagnoses analyzed.
+- Patient satisfaction varied across locations, with average scores remaining around the 3.8–3.9 range.
+- NHIS accounted for the largest share of total treatment cost among the insurance types analyzed.
 
-These observations describe patterns in the portfolio dataset and should not be interpreted as causal conclusions.
+## Dashboard Pages
 
-## Power BI Dashboard
+### 1. Executive Overview
 
-The dashboard contains four analytical pages:
+Provides a high-level view of patient volume, treatment cost, average length of stay, patient satisfaction, admission trends, and departmental activity.
 
-### 1. KPI & Visuals
-Executive-level overview including:
-- Total patients
-- Total treatment cost
-- Average treatment cost
-- Average length of stay
-- Average satisfaction
-- Monthly admission trend
-- Patient volume by department
-- Admission type distribution
-- Patient satisfaction distribution
+![Executive Overview](01_Executive_Overview.png)
 
 ### 2. Patient & Clinical Analysis
-Focuses on:
-- Age distribution
-- Gender distribution
-- Treatment cost by diagnosis
-- Average treatment cost by diagnosis
-- Department × diagnosis analysis
+
+Explores age distribution, gender distribution, treatment cost by diagnosis, average treatment cost, and departmental diagnosis patterns.
+
+![Patient Clinical Analysis](02_Patient_Clinical_Analysis.png)
 
 ### 3. Hospital Operations
-Focuses on:
-- Monthly treatment cost trend
-- Average length of stay by department
-- Admission type analysis
-- Patient volume by department
-- Doctor workload
+
+Examines monthly treatment cost trends, average length of stay by department, admission types, departmental patient volume, and operational activity.
+
+![Hospital Operations](03_Hospital_Operations.png)
 
 ### 4. Financial & Patient Experience
-Focuses on:
-- Treatment cost by department
-- Treatment cost by location
-- Insurance treatment cost
-- Average treatment cost by diagnosis
-- Average patient satisfaction by location
 
-## SQL Analysis
+Analyzes treatment costs by department, insurance type, diagnosis, and patient satisfaction across locations.
 
-The SQL analysis is organized into:
+![Financial Patient Experience](04_Financial_Patient_Experience.png)
 
-1. Patient Volume & Admissions
-2. Demographics
-3. Department Analysis
-4. Diagnosis Analysis
-5. Financial Analysis
-6. Insurance Analysis
-7. Doctor Workload
-8. Patient Satisfaction
-9. Advanced Analysis
+## Tools Used
 
-The SQL file includes aggregation, filtering, grouping, conditional calculations, subqueries, and window functions.
+- *Power BI* – Dashboard development and data visualization
+- *DAX* – Calculations and KPI measures
+- *SQL* – Data analysis and querying
+- *Data Cleaning* – Data preparation and validation
+- *Data Visualization* – Interactive charts and dashboard design
 
-## Project Workflow
+## Project Structure
 
 ```text
-Raw Hospital Dataset
-        ↓
-SQL Exploration & Validation
-        ↓
-Aggregations & Analytical Queries
-        ↓
-Power BI Data Modeling / DAX
-        ↓
-Interactive Dashboard
-        ↓
-Business Insights
-```
-
-## Repository Structure
-
-```text
-hospital-operations-patient-insights/
+hospital-operations-patients-insights/
+│
 ├── README.md
-├── data/
-│   └── hospital_patient_dataset.csv
-├── sql/
-│   └── hospital_analysis.sql
-├── powerbi/
-│   └── hospital_patient_dashboard.pbix
-├── screenshots/
-│   ├── 01_Executive_Overview.png
-│   ├── 02_Patient_Clinical_Analysis.png
-│   ├── 03_Hospital_Operations.png
-│   └── 04_Financial_Patient_Experience.png
-└── documentation/
-    └── project-insights.md
-```
-
-## Skills Demonstrated
-
-**SQL | Power BI | DAX | Data Cleaning | Data Analysis | Exploratory Data Analysis | Data Visualization | Business Intelligence | Healthcare Analytics**
-
-## Portfolio Note
-
-This project demonstrates the ability to move from raw data to structured analysis and an interactive business intelligence dashboard. The emphasis is on analytical thinking, SQL querying, data visualization, and communicating findings clearly.
+├── hospital_analysis_cleaned.sql
+│
+├── 01_Executive_Overview.png
+├── 02_Patient_Clinical_Analysis.png
+├── 03_Hospital_Operations.png
+└── 04_Financial_Patient_Experience.png
